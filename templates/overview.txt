@@ -1,0 +1,6 @@
+Linux Practical Workspace
+This workspace is used to practise Linux user and filesystem management.
+The config directory stores the application configuration file.
+The documents directory stores notes and task files.
+The backups directory stores copies of selected files.
+The evidence directory is used to keep practical evidence.

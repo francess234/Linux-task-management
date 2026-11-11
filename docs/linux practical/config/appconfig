@@ -1,0 +1,6 @@
+APP_NAME=LinuxPractical
+OWNER=user02
+ENVIRONMENT=training
+LOG_LEVEL=debug
+BACKUP_ENABLED=true
+CONTACT=student

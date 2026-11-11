@@ -1,0 +1,44 @@
+name: Validate practical submission
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate required submission files
+        shell: bash
+        run: |
+          set -euo pipefail
+          required=(
+            "README.md"
+            "docs/fhs-notes.md"
+            "docs/reflection-answers.md"
+            "evidence/command-log.md"
+            "evidence/README.md"
+            "screenshots/README.md"
+            "templates/app.conf"
+            "templates/checklist.txt"
+            "templates/overview.txt"
+          )
+          for path in "${required[@]}"; do
+            if [[ ! -f "$path" ]]; then
+              echo "::error::Missing required file: $path"
+              exit 1
+            fi
+          done
+          for path in docs evidence screenshots; do
+            if [[ ! -d "$path" ]]; then
+              echo "::error::Missing required folder: $path"
+              exit 1
+            fi
+          done
+          echo "Required practical folders and files are present."

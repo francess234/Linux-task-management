@@ -1,0 +1,5 @@
+[ ] Create and verify the Linux user
+[ ] Explore the required FHS directories
+[ ] Build and verify the practical workspace
+[ ] Edit and verify app.conf
+[ ] Demonstrate file operations, search, and permissions

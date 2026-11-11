@@ -1,0 +1,14 @@
+# Editor and operating-system files
+*~
+*.swp
+.DS_Store
+Thumbs.db
+
+# Keep evidence folders in Git even before evidence is added.
+# Never commit credentials, private keys, or password files.
+.env
+.env.*
+*.pem
+*.key
+id_rsa
+id_ed25519
